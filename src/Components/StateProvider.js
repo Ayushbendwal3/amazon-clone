@@ -8,6 +8,4 @@ export const StateProvider = ({ reducer, initialState, children }) => (
   </StateContext.Provider>
 )
 
-const useStateValue = () => useContext(StateContext)
-
-export default useStateValue
+export const useStateValue = () => useContext(StateContext)

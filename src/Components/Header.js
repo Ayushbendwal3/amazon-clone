@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import './css/Header.css'
 import { Link } from 'react-router-dom'
-import useStateValue from './StateProvider'
+import { useStateValue } from './StateProvider'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 
 function Header() {
   const [{ cart }] = useStateValue()
+
+  console.log(cart)
 
   return (
     <nav className="header">
@@ -48,7 +50,7 @@ function Header() {
           <div className="header__optionCart">
             <ShoppingBasketIcon />
             <span className="header__optionLineTwo header__cartCount">
-              {cart.length}
+              {cart?.length}
             </span>
           </div>
         </Link>
